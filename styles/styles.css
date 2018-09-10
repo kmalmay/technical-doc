@@ -1,0 +1,304 @@
+/* Notes: ---------------------
+
+color palette:
+orange:		rgba(249, 198, 42, 0.7)
+blue:		rgb(42, 173, 249)
+dark blue:	rgb(0, 78, 124)
+light gray: rgb(239, 239, 239)
+	
+------------------------------*/
+
+
+/* Global Styles
+------------------------------*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+b {
+	font-weight: 800;
+}
+
+
+/* Nav
+------------------------------*/
+#navbar {
+	position: fixed;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    overflow-y: scroll;
+    background-color: rgb(0, 78, 124);
+}
+
+#navbar header {
+	padding: 1.5em 0.5em 0 0.8em;
+	color: white;
+	font-size: 1.5em;
+}
+
+.nav-link {
+	display: block;
+	margin: 0;
+	padding: 1em 1.5em;
+	overflow-y: scroll;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 1px;
+	color: white;
+	text-decoration: none;
+	position: relative;
+}
+
+.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 1px;
+  bottom: 0em;
+  left: 1em;
+  background-color: rgb(255,255,255);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.nav-link:first-of-type {
+	margin-top: 2em;
+}
+
+.nav-link:last-of-type {
+	margin-bottom: 2em;
+}
+
+/* Main
+------------------------------*/
+#main-doc {
+	padding: 0;
+	float: right;
+	width: 75%;
+	margin-right:2em;
+}
+
+#main-doc a {
+	text-decoration: none;
+	color: rgb(42, 173, 249);
+}
+
+#main-doc a:hover {
+	text-decoration: underline;
+}
+
+header {
+	font-size: 2em;
+	font-family: 'Raleway', sans-serif;
+	color: rgb(0, 78, 124); /*dark blue*/
+	font-weight: bold;
+	padding-top: 0;
+}
+
+#introduction {
+	padding-top: 2em;
+}
+
+p, ul {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5em;
+	font-weight: normal;
+}
+
+li {
+	margin: 1em 0;
+}
+
+li:last-of-type {
+	margin-bottom: 2em;
+}
+
+article p > li {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+hr {
+	margin: 4em auto;
+	border: 0.5px solid rgb(0, 78, 124); /*dark blue*/
+}
+
+/* -------Code Snippets-------*/
+code {
+	font-size: 1.2em;
+	background-color: rgb(226, 226, 226); /*light gray*/
+}
+
+.code-box {
+	background-color: rgb(239, 239, 239); /*light gray*/
+    width: 80%;
+    margin: 2em 0 2em 2em;
+    padding: 1em 2em;
+    border-left: 5px solid rgb(0, 78, 124); /*dark blue*/
+}
+
+.code-box ul, .code-box li {
+	font-family: Consolas, monaco, monospace;
+	font-weight: normal;
+	list-style: none;
+	font-size: 0.8em;
+	line-height: 0.5em;
+	margin-bottom: 0;
+}
+.code-box p {
+	font-family: Consolas, monaco, monospace;
+	font-weight: normal;
+	font-size: 0.7em;
+	line-height: 0.5em;
+}
+
+.indent {
+	padding-left: 1em; 
+}
+
+/* ---Example Box----*/
+
+/* * { box-sizing: border-box;}
+.example-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-gap: 10px;
+}
+
+.example-wrapper > div {
+    border-radius: 5px;
+    background-color: rgb(207,232,220);
+    padding: 1em;
+}*/
+
+
+/* ---Explination Snippets----*/
+.explination-box {
+	font-family: 'Times New Roman', serif;
+    width: 80%;
+    margin: 2em 0 2em 2em;
+    padding: 1em 2em;
+    border: 1px solid rgb(0, 78, 124); /*dark blue*/
+    border-left: 5px solid rgb(0, 78, 124); /* dark blue*/
+}
+
+.explination-box p, .explination-box ul, .explination-box li {
+	font-family: 'Times New Roman', serif;
+}
+.explination-box li {
+	line-height: 0.5;
+}
+
+
+
+/* --------Note Boxes---------*/
+.note-box {
+	background-color: rgba(42, 173, 249, 0.3); /*blue*/
+    width: 80%;
+    margin: 2em 0 2em 2em;
+    padding: 1em 2em;
+    border-left: 5px solid rgb(0, 78, 124); /*dark blue*/
+}
+
+
+/* Media Queries
+------------------------------*/
+@media screen and (max-width: 935px) {
+	#navbar header {
+		font-size: 1em;
+		font-weight: bold;
+		padding: 2.5em 0.5em 0 1.5em;
+	}
+	#main-doc {
+		width: 73%;
+		margin-right: 1em;
+	}
+}
+
+
+@media screen and (max-width: 679px) {
+	#navbar {
+		position: static;
+	    margin: 0;
+	    width: 100%;
+	    background-color: rgb(0, 78, 124);
+	}
+
+	#navbar header {
+		padding: 0.5em 0 0.2em 0;
+		margin: 0;
+		text-align: center;
+		color: white;
+		font-size: 1.5em;
+		padding: 1em 1em;
+		display: block;
+	}
+
+	.nav-link {
+		display: block;
+		text-align: center;
+		padding: 0 auto;
+	}	
+
+	.nav-link:before {
+		  content: "";
+		  justify-content: center;
+		  position: absolute;
+		  width: 50%;
+		  height: 1px;
+		  bottom: 0;
+		  left: 25%;
+		  background-color: rgb(255,255,255);
+		  visibility: hidden;
+		  -webkit-transform: scaleX(0);
+		  transform: scaleX(0);
+		  -webkit-transition: all 0.3s ease-in-out 0s;
+		  transition: all 0.3s ease-in-out 0s;
+		}
+
+	.nav-link:first-of-type {
+		margin-top: 0;
+	}
+
+	.nav-link:last-of-type {
+		margin-bottom: 1em;
+	}
+
+	#main-doc {
+		width: auto;
+		margin: 0;
+		padding: 0 1em;
+		float: none;
+	}
+
+	hr {
+		margin 0 auto;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.code-box, .explination-box, .note-box {
+		width: 90%;
+   		margin: 2em 0 2em 0;
+    	padding: 1em 1em;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.code-box, .explination-box, .note-box {
+		padding: 1em 0 1em 0.3em;
+		width: 98%;
+}
